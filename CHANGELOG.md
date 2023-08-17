@@ -123,6 +123,8 @@ Shipping methods can be removed by the user after it has been assigned to a chec
   - Called after `requestPasswordReset` or `customerCreate` mutation.
 - Add `STAFF_SET_PASSWORD_REQUESTED` webhook - #13486, by @Air-t
   - Called after `requestPasswordReset` or `customerCreate` mutation for staff users.
+- Add `FULFILLMENT_TRACKING_NUMBER_UPDATED` webhook - #13708, by @Air-t
+  - Called after `fulfillmentUpdateTracking` or `orderFulfill` mutation if tracking number is updated.
 
 ### Other changes
 

@@ -574,6 +574,12 @@ class BasePlugin:
     # metadata is updated.
     fulfillment_metadata_updated: Callable[["Fulfillment", Any], Any]
 
+    # Trigger when fulfillment tracking number is updated.
+    #
+    # Overwrite this method if you need to trigger specific logic when a fulfillment
+    # tracking number is updated.
+    fulfillment_tracking_number_updated: Callable[["Fulfillment", Any], Any]
+
     get_checkout_line_tax_rate: Callable[
         [
             "CheckoutInfo",

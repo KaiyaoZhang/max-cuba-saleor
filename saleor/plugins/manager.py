@@ -885,6 +885,15 @@ class PluginsManager(PaymentInterface):
             "fulfillment_metadata_updated", default_value, fulfillment
         )
 
+    def fulfillment_tracking_number_updated(self, fulfillment: "Fulfillment"):
+        default_value = None
+        return self.__run_method_on_plugins(
+            "fulfillment_tracking_number_updated",
+            default_value,
+            fulfillment,
+            channel_slug=fulfillment.order.channel.slug,
+        )
+
     def tracking_number_updated(self, fulfillment: "Fulfillment"):
         default_value = None
         return self.__run_method_on_plugins(

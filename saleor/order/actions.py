@@ -965,6 +965,7 @@ def create_fulfillments(
                 )
             )
             if tracking_number:
+                call_event(manager.fulfillment_tracking_number_updated, fulfillment)
                 call_event(manager.tracking_number_updated, fulfillment)
 
         FulfillmentLine.objects.bulk_create(fulfillment_lines)
